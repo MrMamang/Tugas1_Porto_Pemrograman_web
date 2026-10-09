@@ -1,10 +1,2 @@
-# Agen AI Configuration
-.agents/
-
-# Project Requirements & Internal Docs
-PRD.md
-
-# Environment variables
+# Local environment variables
 .env
-
-AGENTS.md

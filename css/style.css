@@ -1,0 +1,600 @@
+/* ==========================================================================
+   Base & Variables (Green-Tech Theme & 8px Scale)
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --c-primary: #047857; /* Emerald 700 */
+  --c-primary-hover: #065f46; /* Emerald 800 */
+  --c-accent: #10b981; /* Emerald 500 */
+  --c-bg: #f8fafc; /* Slate 50 */
+  --c-surface: #ffffff;
+  --c-text-main: #0f172a; /* Slate 900 */
+  --c-text-muted: #475569; /* Slate 600 */
+  --c-border: #e2e8f0; /* Slate 200 */
+  --c-focus: #34d399; /* Emerald 400 */
+
+  /* Spacing Scale (8px intervals) */
+  --s-8: 0.5rem;
+  --s-16: 1rem;
+  --s-24: 1.5rem;
+  --s-32: 2rem;
+  --s-40: 2.5rem;
+  --s-48: 3rem;
+  --s-64: 4rem;
+  --s-80: 5rem;
+  --s-128: 8rem;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 2.5rem; /* 40px */
+  --font-size-4xl: 3rem; /* 48px */
+  
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+
+  /* Structural Variables */
+  --radius: 4px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: 0.2s ease;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  color: var(--c-text-main);
+  background-color: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, figure, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Fallback gaya untuk gambar kosong (tanpa file asli) untuk validasi portofolio */
+img {
+  background-color: var(--c-border);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+a {
+  color: var(--c-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover, a:focus {
+  color: var(--c-primary-hover);
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  line-height: var(--line-height-heading);
+  font-weight: 800;
+  color: var(--c-text-main);
+}
+
+p {
+  margin-bottom: var(--s-16);
+  color: var(--c-text-muted);
+}
+
+address {
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Layout & Utilities
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--s-24);
+}
+
+.section-spacing {
+  padding-top: var(--s-64);
+  padding-bottom: var(--s-64);
+}
+
+.bg-surface {
+  background-color: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+}
+
+/* Hanya untuk screen reader - Menyembunyikan label toggle demi aksebilitas */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Grid Layouts - Mobile First */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-32);
+  margin-top: var(--s-32);
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-16) var(--s-24);
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+  border: 2px solid transparent;
+  font-size: var(--font-size-base);
+}
+
+.btn-primary {
+  background-color: var(--c-primary);
+  color: var(--c-surface);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--c-primary-hover);
+  color: var(--c-surface);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.btn-outline:hover, .btn-outline:focus {
+  background-color: var(--c-primary);
+  color: var(--c-surface);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  filter: brightness(0.85);
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-16);
+  margin-top: var(--s-32);
+}
+
+@media (min-width: 480px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+/* ==========================================================================
+   Header & Navigation (Pure CSS Toggle)
+   ========================================================================== */
+.site-header {
+  background-color: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px; /* Fixed height untuk header konsisten */
+}
+
+.brand {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--c-primary);
+}
+
+/* CSS-Only Menu Toggle (Hack Checkbox) */
+.menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px; /* Minimum 44px tap target size (accessibility) */
+  height: 44px;
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  background-color: var(--c-text-main);
+  width: 24px;
+  height: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+}
+
+.menu-icon::before {
+  transform: translateY(-8px);
+}
+
+.menu-icon::after {
+  transform: translateY(8px);
+}
+
+/* Animasi perubahan ikon hamburger ke ikon 'X' saat checkbox aktif */
+.menu-toggle:checked ~ .menu-button .menu-icon {
+  background-color: transparent;
+}
+
+.menu-toggle:checked ~ .menu-button .menu-icon::before {
+  transform: rotate(45deg);
+}
+
+.menu-toggle:checked ~ .menu-button .menu-icon::after {
+  transform: rotate(-45deg);
+}
+
+/* Main Nav Styles */
+.main-nav {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  display: none; /* Disembunyikan default pada mobile */
+  padding: var(--s-16) var(--s-24);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-toggle:checked ~ .main-nav {
+  display: block;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+}
+
+.main-nav a {
+  display: block;
+  padding: var(--s-16) 0; /* Padding lebih besar di mobile agar tap target > 44px */
+  font-weight: 600;
+  color: var(--c-text-main);
+}
+
+.main-nav a:hover, .main-nav a:focus {
+  color: var(--c-primary);
+}
+
+/* Desktop Navigation overrides */
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+  
+  .main-nav {
+    position: static;
+    display: block;
+    width: auto;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .main-nav ul {
+    flex-direction: row;
+    gap: var(--s-32);
+  }
+  
+  .main-nav a {
+    padding: 0; /* Kembalikan padding normal saat mode desktop horizontal */
+  }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  padding-top: var(--s-64);
+  padding-bottom: var(--s-64);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--s-128);
+    padding-bottom: var(--s-128);
+  }
+}
+
+.hero h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--s-16);
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+.hero .role {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--c-primary);
+  margin-bottom: var(--s-24);
+}
+
+.hero .bio {
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+}
+
+/* ==========================================================================
+   Section: Base Elements & Cards
+   ========================================================================== */
+section h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--s-16);
+}
+
+.skill-card, .project-card {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--s-24);
+}
+
+.skill-card h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--s-16);
+  color: var(--c-primary);
+}
+
+.skill-card ul {
+  list-style-type: disc;
+  padding-left: var(--s-24);
+  color: var(--c-text-muted);
+}
+
+.skill-card li {
+  margin-bottom: var(--s-8);
+}
+
+/* Khusus Project Card - Konten Image */
+.project-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.project-card figcaption {
+  padding: var(--s-16) var(--s-24) 0;
+  font-size: 0.875rem;
+  color: var(--c-text-muted);
+  font-style: italic;
+}
+
+.project-content {
+  padding: var(--s-16) var(--s-24) var(--s-24);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--s-8);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-8);
+  margin-top: auto;
+  padding-top: var(--s-16);
+}
+
+.tag {
+  background-color: var(--c-bg);
+  color: var(--c-text-main);
+  border: 1px solid var(--c-border);
+  font-size: 0.875rem;
+  padding: 4px var(--s-8);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Section: Timeline
+   ========================================================================== */
+.timeline {
+  margin-top: var(--s-32);
+  border-left: 2px solid var(--c-border);
+  padding-left: var(--s-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-32);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+/* Bullet timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--s-24) * -1 - 6px); /* -24px padding + -6px bullet width */
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--c-primary);
+}
+
+.timeline-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: 4px;
+}
+
+.timeline-meta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-text-main);
+  margin-bottom: var(--s-8);
+}
+
+/* ==========================================================================
+   Section: Contact
+   ========================================================================== */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-48);
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-address {
+  margin-top: var(--s-24);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: var(--s-24);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--s-8);
+  color: var(--c-text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--s-16);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--c-text-main);
+  background-color: var(--c-surface);
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background-color: var(--c-text-main);
+  color: var(--c-surface);
+  padding: var(--s-32) 0;
+  text-align: center;
+}
+
+.site-footer p {
+  color: var(--c-border);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Animations (Pure CSS3 - Tanpa Framework)
+   ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menerapkan animasi ke beberapa elemen saat halaman dimuat */
+.hero-content, 
+.skill-card, 
+.project-card, 
+.timeline-item {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Memberikan jeda (delay) agar elemen muncul berurutan secara elegan */
+.skill-card:nth-child(1), .project-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2), .project-card:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }

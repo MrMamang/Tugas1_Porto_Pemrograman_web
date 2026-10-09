@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faris Ramadhan Riyanto | IoT Engineer & Web Developer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">MY Portofolio</div>
+
+        <!-- CSS-only mobile menu toggle -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-button">
+          <span class="menu-icon"></span>
+          <span class="sr-only">Buka menu navigasi</span>
+        </label>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#keahlian">Keahlian</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#pengalaman">Pengalaman</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="profil" class="hero section-spacing container">
+        <div class="hero-content">
+          <h1>Faris Ramadhan Riyanto</h1>
+          <p class="role">IoT Engineer & Web Developer</p>
+          <p class="bio">
+            Membangun sistem otomasi perangkat keras dan antarmuka web untuk
+            mengendalikan perangkat fisik secara jarak jauh.
+          </p>
+          <div class="actions">
+            <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
+            <a
+              href="/assets/CV_Faris_Ramadhan.pdf"
+              class="btn btn-outline"
+              download
+              >Unduh CV</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="keahlian" class="section-spacing container bg-surface">
+        <h2>Keahlian</h2>
+        <div class="grid-2">
+          <article class="skill-card">
+            <h3>Internet of Things (IoT)</h3>
+            <p>
+              Pengembangan sistem tertanam dan otomasi untuk berbagai kebutuhan
+              perangkat fisik.
+            </p>
+            <ul>
+              <li>Mikrokontroler ESP32</li>
+              <li>Sensor suhu dan kelembaban SHT30</li>
+              <li>Sensor intensitas cahaya BH1750</li>
+              <li>Aktuator relay dan kontrol pompa air</li>
+              <li>Protokol komunikasi MQTT dan REST API</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3>Web Development</h3>
+            <p>
+              Pembuatan antarmuka web yang terstruktur, interaktif, dan dapat
+              diakses dengan baik.
+            </p>
+            <ul>
+              <li>HTML5 semantik</li>
+              <li>CSS3 (Grid, Flexbox, Variables)</li>
+              <li>JavaScript dasar</li>
+              <li>Version Control dengan Git</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="proyek" class="section-spacing container">
+        <h2>Proyek Terpilih</h2>
+        <div class="grid-2">
+          <article class="project-card">
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80"
+                alt="Perangkat keras prototipe ESP32, sensor SHT30, dan pompa air yang dirakit untuk otomasi greenhouse"
+              />
+              <figcaption>
+                Sistem penyiraman otomatis berdasarkan data sensor
+              </figcaption>
+            </figure>
+            <div class="project-content">
+              <h3>Smart Garden & Greenhouse Automation</h3>
+              <p>
+                Sistem IoT menggunakan ESP32 untuk memonitor suhu, kelembaban,
+                dan intensitas cahaya, serta mengendalikan pompa air secara
+                otomatis melalui relay. Data metrik dikirimkan dan
+                divisualisasikan melalui protokol MQTT.
+              </p>
+              <div class="tags">
+                <span class="tag">ESP32</span>
+                <span class="tag">MQTT</span>
+                <span class="tag">C++</span>
+              </div>
+              <div class="project-actions" style="margin-top: 1rem">
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  style="padding: 8px 16px; font-size: 0.875rem"
+                  >Lihat Proyek IoT</button
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                alt="Tampilan antarmuka website portofolio yang rapi pada mode perangkat seluler dan desktop"
+              />
+              <figcaption>Antarmuka portofolio responsif HTML murni</figcaption>
+            </figure>
+            <div class="project-content">
+              <h3>Digital Portfolio & Resume System</h3>
+              <p>
+                Portofolio web pribadi yang dibangun dari awal tanpa framework.
+                Fokus utama mencakup struktur semantik HTML5, dukungan
+                aksesibilitas keyboard, dan tata letak responsif menggunakan CSS
+                murni.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+              </div>
+              <div class="project-actions" style="margin-top: 1rem">
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  style="padding: 8px 16px; font-size: 0.875rem"
+                  >Lihat Proyek Web</button
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="pengalaman" class="section-spacing container bg-surface">
+        <h2>Linimasa Pendidikan & Pengalaman</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3 class="timeline-title">Universitas [Nama Universitas]</h3>
+            <p class="timeline-meta">
+              Mahasiswa Program Studi Teknik Informatika | 2022 - Sekarang
+            </p>
+            <p>
+              Fokus mendalami arsitektur komputer, sistem tertanam (embedded
+              systems), dan rekayasa perangkat lunak.
+            </p>
+          </article>
+          <article class="timeline-item">
+            <h3 class="timeline-title">Pengembang IoT Independen</h3>
+            <p class="timeline-meta">Proyek PPK Oramawa | 2025 - 2026</p>
+            <p>
+              Merancang, memprogram, dan merakit sistem purwarupa fisik untuk
+              keperluan otomasi pertanian skala kecil.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="kontak" class="section-spacing container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2>Mari Bekerja Sama</h2>
+            <p>
+              Apakah Anda membutuhkan bantuan untuk mengintegrasikan perangkat
+              keras atau mengembangkan tampilan web? Kirim pesan melalui
+              formulir ini atau langsung hubungi saya di alamat email berikut.
+            </p>
+            <address class="contact-address">
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:faris@example.com">faris@example.com</a>
+              </p>
+              <p><strong>Lokasi:</strong> Indonesia</p>
+            </address>
+          </div>
+
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Alamat Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; 2026 Faris Ramadhan Riyanto. Dibangun dengan HTML5 & CSS3
+          murni.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
